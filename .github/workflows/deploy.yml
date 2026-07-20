@@ -48,4 +48,3 @@ jobs:
           export IMAGE=${{ secrets.MGC_REGISTRY_NAME }}/orders-api:${{ github.sha }}
           envsubst < k8s/app.yaml | kubectl apply -f -
           kubectl rollout status deployment/orders-api --timeout=120s
-EOF
